@@ -17,7 +17,7 @@ zuul:
   ignoredServices: '*'
   routes:
     account:
-      path: /app-center/**
-      serviceId: sst-app-center
+      path: /test-client/**
+      serviceId: spc-test-client
       sensitiveHeaders:
       stripPrefix: true
