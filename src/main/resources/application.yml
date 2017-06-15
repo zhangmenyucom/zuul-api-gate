@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: zuul-api-gate
+server:
+  port: 7002
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:7003/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 3
+    lease-expiration-duration-in-seconds: 4
+    preferIpAddress: true
+zuul:
+  ignoredServices: '*'
+  routes:
+    account:
+      path: /app-center/**
+      serviceId: sst-app-center
+      sensitiveHeaders:
+      stripPrefix: true
